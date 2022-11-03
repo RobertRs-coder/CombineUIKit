@@ -11,7 +11,6 @@ import Combine
 class BootcampsTableViewController: UITableViewController {
     
     private var viewModel = BootcampsViewModel()
-    
     private var subscriber = Set<AnyCancellable>()
 
     override func viewDidLoad() {
@@ -20,7 +19,7 @@ class BootcampsTableViewController: UITableViewController {
         //Register cell
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
-        // Create subscriber
+        // Create subscriber (Binding with ViewModel)
         viewModel.$bootcamps
             .sink { data in
                 //What do you want to do with the data? here
