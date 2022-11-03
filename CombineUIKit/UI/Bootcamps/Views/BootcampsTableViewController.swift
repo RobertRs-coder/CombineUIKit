@@ -6,17 +6,30 @@
 //
 
 import UIKit
+import Combine
 
 class BootcampsTableViewController: UITableViewController {
+    
+    private var viewModel = BootcampsViewModel()
+    
+    private var subscriber = Set<AnyCancellable>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //Register cell
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        
+        // Create subscriber
+        viewModel.$bootcamps
+            .sink { data in
+                //What do you want to do with the data?
+                self.tableView.reloadData()
+            }
+            .store(in: &subscriber)
+        
+        //Call loadData
+        viewModel.loadBotcamps()
     }
 
     // MARK: - Table view data source
@@ -28,14 +41,17 @@ class BootcampsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return viewModel.bootcamps.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-
+        var content = cell.defaultContentConfiguration()
+        content.text = self.viewModel.bootcamps[indexPath.row].name
+        cell.contentConfiguration = content
+        
         return cell
     }
 }

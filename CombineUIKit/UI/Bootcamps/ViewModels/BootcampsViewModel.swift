@@ -29,7 +29,8 @@ final class BootcampsViewModel: ObservableObject{
                 return $0.data
             }
             .decode(type: [Bootcamp].self, decoder: JSONDecoder())
-            .receive(on: DispatchQueue.main)
+            //We can solve erros here
+            .receive(on: DispatchQueue.main) //We modify UI
             .sink { completion in
                 switch completion{
                 case .failure(let error):
@@ -41,7 +42,6 @@ final class BootcampsViewModel: ObservableObject{
                 self.bootcamps = data
             }
             .store(in: &subcribers)
-
     }
     
 }
