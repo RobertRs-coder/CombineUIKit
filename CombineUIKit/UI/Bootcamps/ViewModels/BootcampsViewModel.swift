@@ -30,7 +30,7 @@ final class BootcampsViewModel: ObservableObject{
             }
             .decode(type: [Bootcamp].self, decoder: JSONDecoder())
             //We can solve erros here
-            .receive(on: DispatchQueue.main) //We modify UI
+//            .receive(on: DispatchQueue.main) //We modify UI but only works in SwifUI
             .sink { completion in
                 switch completion{
                 case .failure(let error):

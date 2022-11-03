@@ -23,8 +23,10 @@ class BootcampsTableViewController: UITableViewController {
         // Create subscriber
         viewModel.$bootcamps
             .sink { data in
-                //What do you want to do with the data?
-                self.tableView.reloadData()
+                //What do you want to do with the data? here
+                DispatchQueue.main.async{
+                    self.tableView.reloadData() //Reload UI data in main thread
+                }
             }
             .store(in: &subscriber)
         
