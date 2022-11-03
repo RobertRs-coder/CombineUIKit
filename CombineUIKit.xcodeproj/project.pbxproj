@@ -58,15 +58,79 @@
 		23158BB3291355DF00D4323B /* CombineUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				23158BB4291355DF00D4323B /* AppDelegate.swift */,
-				23158BB6291355DF00D4323B /* SceneDelegate.swift */,
-				23158BB8291355DF00D4323B /* ViewController.swift */,
-				23158BBA291355DF00D4323B /* Main.storyboard */,
+				23158BCC2913664500D4323B /* App */,
+				23158BCD2913666900D4323B /* UI */,
 				23158BBD291355E000D4323B /* Assets.xcassets */,
 				23158BBF291355E000D4323B /* LaunchScreen.storyboard */,
 				23158BC2291355E000D4323B /* Info.plist */,
 			);
 			path = CombineUIKit;
+			sourceTree = "<group>";
+		};
+		23158BC92913662F00D4323B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		23158BCA2913663600D4323B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				23158BBA291355DF00D4323B /* Main.storyboard */,
+				23158BB8291355DF00D4323B /* ViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		23158BCB2913663D00D4323B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		23158BCC2913664500D4323B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				23158BB4291355DF00D4323B /* AppDelegate.swift */,
+				23158BB6291355DF00D4323B /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		23158BCD2913666900D4323B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				23158BCE2913667100D4323B /* Root */,
+				23158BCF291366A900D4323B /* Bootcamps */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		23158BCE2913667100D4323B /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				23158BC92913662F00D4323B /* Models */,
+				23158BCA2913663600D4323B /* Views */,
+				23158BCB2913663D00D4323B /* ViewModels */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		23158BCF291366A900D4323B /* Bootcamps */ = {
+			isa = PBXGroup;
+			children = (
+				23158BD0291366B700D4323B /* Views */,
+			);
+			path = Bootcamps;
+			sourceTree = "<group>";
+		};
+		23158BD0291366B700D4323B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
