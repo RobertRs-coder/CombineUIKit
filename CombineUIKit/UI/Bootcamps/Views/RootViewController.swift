@@ -16,7 +16,7 @@ class RootViewController: UIViewController {
 
     @IBAction func onTapLoadData(_ sender: UIButton) {
         //Load BootcampsTableViewContoller
+        self.navigationController?.pushViewController(BootcampsTableViewController(), animated: true)
     }
-    
 }
 
