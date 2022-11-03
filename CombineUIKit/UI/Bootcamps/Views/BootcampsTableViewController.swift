@@ -18,7 +18,7 @@ class BootcampsTableViewController: UITableViewController {
         super.viewDidLoad()
 
         //Register cell
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         // Create subscriber
         viewModel.$bootcamps
