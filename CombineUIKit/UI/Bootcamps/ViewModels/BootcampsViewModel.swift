@@ -8,6 +8,11 @@
 import Foundation
 import Combine
 
-final class BootcampsViewModel{
+final class BootcampsViewModel: ObservableObject{
+    
+    @Published var bootcamps: [Bootcamp] = Array<Bootcamp>()
+    var subcribers = Set<AnyCancellable>()
+    
+    
     
 }
